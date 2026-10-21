@@ -44,53 +44,57 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 2. Resaltar Página Activa en la Navegación (Fallback)
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    navLinks.forEach(link => {
-        const linkPath = link.getAttribute('href');
-        if (linkPath === currentPath) {
+    const normalizar = (ruta) => {
+        const limpia = (ruta || '').split(/[?#]/)[0].replace(/\.html$/, '').replace(/\/index$/, '/').replace(/\/+$/, '');
+        return limpia === '' ? '/' : limpia;
+    };
+    const currentPath = normalizar(window.location.pathname);
+    document.querySelectorAll('.nav-link').forEach(link => {
+        if (normalizar(link.getAttribute('href')) === currentPath) {
             link.classList.add('active');
             link.setAttribute('aria-current', 'page');
         }
     });
 
-    // 3. Validación de Formulario de Contacto (si existe)
+    // 3. Formulario de Contacto: arma el mensaje y lo abre en WhatsApp
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            
-            const nombre = document.getElementById('nombre');
-            const email = document.getElementById('email');
-            const telefono = document.getElementById('telefono');
-            const mensaje = document.getElementById('mensaje');
+
+            const valor = (id) => {
+                const campo = document.getElementById(id);
+                return campo ? campo.value.trim() : '';
+            };
+            const nombre = valor('nombre');
+            const email = valor('email');
+            const telefono = valor('telefono');
+            const mensaje = valor('mensaje');
             const formFeedback = document.getElementById('form-feedback');
 
-            if (!nombre.value.trim() || !email.value.trim() || !mensaje.value.trim()) {
-                if (formFeedback) {
-                    formFeedback.style.display = 'block';
-                    formFeedback.className = 'form-feedback error';
-                    formFeedback.textContent = 'Por favor, completa todos los campos obligatorios.';
-                }
+            const mostrar = (tipo, texto) => {
+                if (!formFeedback) return;
+                formFeedback.style.display = 'block';
+                formFeedback.className = 'form-feedback ' + tipo;
+                formFeedback.textContent = texto;
+            };
+
+            if (!nombre || !mensaje) {
+                mostrar('error', 'Por favor, completa tu nombre y tu consulta.');
                 return;
             }
 
-            // Simulación de envío exitoso
-            if (formFeedback) {
-                formFeedback.style.display = 'block';
-                formFeedback.className = 'form-feedback success';
-                formFeedback.textContent = '¡Gracias por tu mensaje! Nos comunicaremos a la brevedad.';
-            }
+            const lineas = [`Hola, mi nombre es ${nombre}.`, mensaje];
+            const contacto = [telefono && `Tel: ${telefono}`, email && `Email: ${email}`].filter(Boolean).join(' - ');
+            if (contacto) lineas.push(`(${contacto})`);
+            const urlWs = `https://wa.me/5493816900316?text=${encodeURIComponent(lineas.join('\n'))}`;
 
-            // Opcional: Redirigir a WhatsApp con el mensaje cargado
-            const textoWs = `Hola, mi nombre es ${nombre.value.trim()}. ${mensaje.value.trim()} (Contacto: ${telefono ? telefono.value.trim() : email.value.trim()})`;
-            const urlWs = `https://wa.me/5493816900316?text=${encodeURIComponent(textoWs)}`;
-            
-            setTimeout(() => {
-                window.open(urlWs, '_blank');
-                contactForm.reset();
-            }, 1000);
+            // Se abre en el mismo gesto del clic para que el navegador no lo bloquee
+            const ventana = window.open(urlWs, '_blank');
+            if (!ventana) {
+                window.location.href = urlWs;
+            }
+            mostrar('success', 'Abrimos WhatsApp con tu consulta lista. Solo falta tocar "Enviar" en WhatsApp para que nos llegue.');
         });
     }
 });

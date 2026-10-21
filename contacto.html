@@ -5,13 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto y Sucursales | Estudio Contable Ortiz-Rivera Tucumán</title>
     <meta name="description" content="Contacta al Estudio Contable Ortiz-Rivera en San Miguel de Tucumán. Sedes en Pje. Pampa 72 y 24 de Septiembre 900. Teléfonos: 381-690-0316 y 381-691-2607.">
-    <link rel="canonical" href="https://www.ortizrivera.com.ar/contacto.html">
+    <link rel="canonical" href="https://www.ortizrivera.com.ar/contacto">
     
     <!-- Open Graph -->
     <meta property="og:title" content="Contacto | Estudio Contable Ortiz-Rivera">
     <meta property="og:description" content="Ubicaciones, teléfonos y atención directa por WhatsApp en San Miguel de Tucumán.">
-    <meta property="og:image" content="images/logo.png">
-    <meta property="og:url" content="https://www.ortizrivera.com.ar/contacto.html">
+    <meta property="og:url" content="https://www.ortizrivera.com.ar/contacto">
+    <meta property="og:image" content="https://www.ortizrivera.com.ar/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Estudio Contable Ortiz-Rivera - San Miguel de Tucumán">
+    <meta property="og:locale" content="es_AR">
+    <meta property="og:site_name" content="Estudio Contable Ortiz-Rivera">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Íconos -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <meta name="theme-color" content="#0A4F78">
     
     <!-- Estilos y Fuentes -->
     <link rel="stylesheet" href="style.css">
@@ -20,6 +33,98 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
+    <!-- Datos estructurados para Google -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.ortizrivera.com.ar/#organizacion",
+      "name": "Estudio Contable Ortiz-Rivera",
+      "url": "https://www.ortizrivera.com.ar/",
+      "logo": "https://www.ortizrivera.com.ar/images/favicon-192.png",
+      "telephone": "+54 381 690-0316",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+54 381 690-0316",
+          "contactType": "customer service",
+          "areaServed": "AR",
+          "availableLanguage": "Spanish"
+        }
+      ]
+    },
+    {
+      "@type": "AccountingService",
+      "name": "Estudio Contable Ortiz-Rivera - Sede Barrio Sur",
+      "parentOrganization": {
+        "@id": "https://www.ortizrivera.com.ar/#organizacion"
+      },
+      "url": "https://www.ortizrivera.com.ar/contacto",
+      "image": "https://www.ortizrivera.com.ar/images/og-image.jpg",
+      "telephone": "+54 381 690-0316",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Pasaje Pampa 72 (altura Mariano Moreno 1500)",
+        "addressLocality": "San Miguel de Tucumán",
+        "addressRegion": "Tucumán",
+        "addressCountry": "AR"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
+      "areaServed": "Tucumán"
+    },
+    {
+      "@type": "AccountingService",
+      "name": "Estudio Contable Ortiz-Rivera - Sede Centro",
+      "parentOrganization": {
+        "@id": "https://www.ortizrivera.com.ar/#organizacion"
+      },
+      "url": "https://www.ortizrivera.com.ar/contacto",
+      "image": "https://www.ortizrivera.com.ar/images/og-image.jpg",
+      "telephone": "+54 381 691-2607",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "24 de Septiembre 900",
+        "addressLocality": "San Miguel de Tucumán",
+        "addressRegion": "Tucumán",
+        "addressCountry": "AR"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
+      "areaServed": "Tucumán"
+    }
+  ]
+}
+    </script>
+
     <!-- JavaScript -->
     <script src="script.js" defer></script>
 
@@ -68,7 +173,7 @@
     <!-- Navegación -->
     <header class="site-header">
         <div class="nav-container">
-            <a href="index.html" class="brand-logo">
+            <a href="/" class="brand-logo">
                 <img src="images/logo.png" alt="Logo Estudio Contable Ortiz-Rivera">
                 <div class="brand-title-group">
                     <span class="brand-title">ORTIZ-RIVERA</span>
@@ -82,10 +187,10 @@
 
             <nav>
                 <ul class="nav-menu" id="nav-menu">
-                    <li><a href="index.html" class="nav-link">Inicio</a></li>
-                    <li><a href="nosotros.html" class="nav-link">El Estudio</a></li>
-                    <li><a href="servicios.html" class="nav-link">Servicios</a></li>
-                    <li><a href="contacto.html" class="nav-link active" aria-current="page">Contacto</a></li>
+                    <li><a href="/" class="nav-link">Inicio</a></li>
+                    <li><a href="/nosotros" class="nav-link">El Estudio</a></li>
+                    <li><a href="/servicios" class="nav-link">Servicios</a></li>
+                    <li><a href="/contacto" class="nav-link active" aria-current="page">Contacto</a></li>
                     <li>
                         <a href="https://wa.me/5493816900316?text=Hola,%20quisiera%20hacer%20una%20consulta%20contable" target="_blank" class="btn btn-whatsapp">
                             <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Consultar WhatsApp
@@ -100,7 +205,7 @@
     <div class="page-header">
         <h1>Contacto y Atención al Cliente</h1>
         <div class="breadcrumbs">
-            <a href="index.html">Inicio</a>
+            <a href="/">Inicio</a>
             <span>/</span>
             <span>Contacto</span>
         </div>
@@ -118,7 +223,7 @@
                         <span class="section-tag">Escríbenos</span>
                         <h2 class="card-title" style="font-size: 1.75rem; margin-bottom: 1rem;">Envíanos tu Consulta</h2>
                         <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem;">
-                            Completa el siguiente formulario y un contador de nuestro equipo se pondrá en contacto a la brevedad.
+                            Completa tus datos y tu consulta: al tocar el botón se abre WhatsApp con el mensaje listo para enviarnos.
                         </p>
 
                         <form id="contact-form" novalidate>
@@ -128,8 +233,8 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="email" class="form-label">Correo Electrónico *</label>
-                                <input type="email" id="email" name="email" class="form-control" placeholder="ejemplo@correo.com" required>
+                                <label for="email" class="form-label">Correo Electrónico</label>
+                                <input type="email" id="email" name="email" class="form-control" placeholder="ejemplo@correo.com">
                             </div>
 
                             <div class="form-group">
@@ -142,8 +247,8 @@
                                 <textarea id="mensaje" name="mensaje" class="form-control" placeholder="Describe brevemente tu necesidad contable o impositiva..." required></textarea>
                             </div>
 
-                            <button type="submit" class="btn btn-primary" style="width: 100%;">
-                                <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Enviar Mensaje
+                            <button type="submit" class="btn btn-whatsapp" style="width: 100%;">
+                                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Enviar consulta por WhatsApp
                             </button>
 
                             <div id="form-feedback" class="form-feedback" aria-live="polite"></div>
@@ -160,6 +265,8 @@
                                 <p class="branch-detail"><i class="fa-solid fa-clock" aria-hidden="true"></i> Lunes a Viernes: 9:00 a 18:00 hs</p>
                                 <p class="branch-detail"><i class="fa-solid fa-phone" aria-hidden="true"></i> 381-690-0316 / 381-691-2607</p>
                             </div>
+                                                        <iframe class="branch-map" title="Mapa Sede Barrio Sur" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Pasaje+Pampa+72,+San+Miguel+de+Tucumán,+Tucumán&output=embed"></iframe>
+                            <a class="branch-map-link" href="https://www.google.com/maps/search/?api=1&query=Pasaje+Pampa+72,+San+Miguel+de+Tucumán,+Tucumán" target="_blank" rel="noopener"><i class="fa-solid fa-diamond-turn-right" aria-hidden="true"></i> Cómo llegar</a>
                             <a href="https://wa.me/5493816900316?text=Hola,%20quisiera%20coordinar%20una%20reunion%20en%20Pje%20Pampa%2072" target="_blank" class="btn btn-whatsapp">
                                 <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp Directo (381-690-0316)
                             </a>
@@ -173,6 +280,8 @@
                                 <p class="branch-detail"><i class="fa-solid fa-clock" aria-hidden="true"></i> Lunes a Viernes: 9:00 a 18:00 hs</p>
                                 <p class="branch-detail"><i class="fa-solid fa-phone" aria-hidden="true"></i> 381-690-0316 / 381-691-2607</p>
                             </div>
+                                                        <iframe class="branch-map" title="Mapa Sede Centro" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=24+de+Septiembre+900,+San+Miguel+de+Tucumán,+Tucumán&output=embed"></iframe>
+                            <a class="branch-map-link" href="https://www.google.com/maps/search/?api=1&query=24+de+Septiembre+900,+San+Miguel+de+Tucumán,+Tucumán" target="_blank" rel="noopener"><i class="fa-solid fa-diamond-turn-right" aria-hidden="true"></i> Cómo llegar</a>
                             <a href="https://wa.me/5493816912607?text=Hola,%20quisiera%20coordinar%20una%20reunion%20en%2024%20de%20Septiembre%20900" target="_blank" class="btn btn-whatsapp">
                                 <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp Directo (381-691-2607)
                             </a>
@@ -199,10 +308,10 @@
                 <div>
                     <h4 class="footer-title">Navegación Rápida</h4>
                     <ul class="footer-links">
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="nosotros.html">El Estudio</a></li>
-                        <li><a href="servicios.html">Servicios</a></li>
-                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="/nosotros">El Estudio</a></li>
+                        <li><a href="/servicios">Servicios</a></li>
+                        <li><a href="/contacto">Contacto</a></li>
                     </ul>
                 </div>
                 <div>
@@ -221,6 +330,13 @@
             </div>
         </div>
     </footer>
+
+
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/5493816900316?text=Hola,%20quisiera%20hacer%20una%20consulta%20contable" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Escribinos por WhatsApp">
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+        <span class="whatsapp-float-text">¿Consultas? Escríbenos</span>
+    </a>
 
 </body>
 </html>
